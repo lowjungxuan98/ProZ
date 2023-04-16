@@ -3,8 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
-// import '../values/values.dart';
-// import '../widgets/widgets.dart';
+import '../global_enum/enum_index.dart';
 
 extension StringExtension on String? {
   // String toBaseUrl() {
@@ -30,16 +29,16 @@ extension StringExtension on String? {
 
   Uri? toUri() => Uri.tryParse(this!);
 
-  // MediaType mediaType() {
-  //   final extension = this!.toLowerCase();
-  //   if (extension.endsWith('jpg') || extension.endsWith('png') || extension.endsWith('jpeg')) {
-  //     return MediaType.image;
-  //   } else if (extension.endsWith('mp4') || extension.endsWith('mov')) {
-  //     return MediaType.video;
-  //   } else {
-  //     return MediaType.image;
-  //   }
-  // }
+  MediaType mediaType() {
+    final extension = this!.toLowerCase();
+    if (extension.endsWith('jpg') || extension.endsWith('png') || extension.endsWith('jpeg')) {
+      return MediaType.image;
+    } else if (extension.endsWith('mp4') || extension.endsWith('mov')) {
+      return MediaType.video;
+    } else {
+      return MediaType.image;
+    }
+  }
 
   String toTitleCase() {
     if (this == null) {
