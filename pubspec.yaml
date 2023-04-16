@@ -14,6 +14,7 @@ dependencies:
   flutter_screenutil: ^5.7.0
   video_player: ^2.6.1
   fluttertoast: ^8.2.1
+  flutter_expandable_fab: ^1.7.1
 
 dev_dependencies:
   flutter_test:
