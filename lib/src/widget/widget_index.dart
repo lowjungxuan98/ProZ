@@ -9,6 +9,7 @@ export 'animated_progress_bar.dart';
 export 'empty_list.dart';
 export 'rating_widget.dart';
 export 'toast.dart';
+export 'corner_icon.dart';
 export 'ITSU/scaffold.dart';
 export 'ITSU/tab_bar_view.dart';
 export 'ITSU/counter.dart';
