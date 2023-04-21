@@ -1,3 +1,4 @@
+// ignore_for_file: non_constant_identifier_names
 import 'package:flutter/material.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,14 +12,18 @@ class ProZScaffold extends StatefulWidget {
     this.backgroundColor = Colors.white,
     this.fab,
     this.bottomNavigationBar,
+    this.endDrawer,
+    this.endDrawerKey
   }) : super(key: key);
+
   final PreferredSizeWidget appBar;
   final Widget body;
   final bool isCurve;
   final Color backgroundColor;
-  final Widget? fab, bottomNavigationBar;
-
-  //passing the required options for hamburger
+  final Widget? fab;
+  final Widget? bottomNavigationBar;
+  final Widget? endDrawer;
+  final Key? endDrawerKey;
 
   @override
   State<ProZScaffold> createState() => _ProZScaffoldState();
@@ -42,10 +47,9 @@ class _ProZScaffoldState extends State<ProZScaffold> {
           child: Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: Colors.transparent,
-            /* endDrawerEnableOpenDragGesture: false,
-            //to open drawer
-            endDrawer:
-                widget.hamburger == true ? drawerColumn(widget.options) : null,*/
+            endDrawerEnableOpenDragGesture: false,
+            endDrawer: widget.endDrawer,
+            key: widget.endDrawerKey,
             appBar: widget.appBar,
             body: Container(
               width: 1.sw,
