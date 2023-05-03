@@ -8,6 +8,7 @@ class ProZ {
   static Future init() async {
     final preference = await StreamingSharedPreferences.instance;
     Get.put<StorageService>(StorageService(preference));
+    await StorageService.to.init();
     Get.put<HttpSetting>(HttpSetting());
   }
 }
