@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
@@ -45,5 +46,19 @@ extension StringExtension on String? {
       return '';
     }
     return this!.split(' ').map((word) => word.substring(0, 1).toUpperCase() + word.substring(1)).join(' ');
+  }
+
+  String capitalizeAndInsertSpace() {
+    if (this == null) {
+      FlutterError('The value cannot be null');
+    }
+    String capitalizedStr = this![0].toUpperCase();
+    for (int i = 1; i < this!.length; i++) {
+      if (this![i].toUpperCase() == this![i]) {
+        capitalizedStr += ' ';
+      }
+      capitalizedStr += this![i];
+    }
+    return capitalizedStr;
   }
 }
